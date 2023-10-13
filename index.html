@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="HI there! this is my personal Portfolio. " />
+    <link rel="icon" type="image/png" href="/images/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/vb - Copy.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Abid – Hussain" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="multiple themes" />
+    <meta property="og:title" content="Abid – Hussain" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://opty.tech" />
+    <meta property="og:image" content="https://op10y.github.io/profile-card/icon/og-img1.png" />
+    <meta name="og:description" content="HI there! this is my personal Portfolio." />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>Abid – Hussain</title>
+   
+</head>
+<style>
+    @font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+
+body {
+    font-family: Source Code Pro;
+    background:#000;
+    color: #00FF00;
+    margin:0;
+    font-size: 13px;
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.bars-and-stuff{
+    left:66.6%;
+}
+
+.output-console {
+    position:fixed;
+    overflow:hidden;
+}
+p{margin:0}
+</style>
+<body>
+    <canvas class='hacker-3d-shiz'></canvas>
+    <canvas class='bars-and-stuff'></canvas>
+    <div class="output-console"></div>
+    <script>
+        const hashFlag = sessionStorage.getItem('displayFlag');
+
+const minimumTime = Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000;
+
+if (!hashFlag) {
+    sessionStorage.setItem('displayFlag', 'true');
+    
+}
+let indexPageLoaded = false;
+
+    window.onload = function() {
+
+
+
+    const timer = setTimeout(function() {
+        if (!indexPageLoaded) {
+            window.location.href = 'http://opty.tech';
+        }
+        }, minimumTime);
+
+window.addEventListener('load', function()
+{
+    indexPageLoaded = true;
+    sessionStorage.removeItem('displayFlag');
+    window.addEventListener('popstate', function () {
+        clearTimeout(timer);
+    });
+});
+};
+    </script>
+    <script src="load.js"></script>
+</body>
+</html>
